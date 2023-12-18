@@ -25,11 +25,11 @@ for (let i = 1; i <= 10; i++) {
 
 //Задание 5
 // Вычислить сумму чисел от 1 до 100 и вывести значение в консоль
-let sum = 0;
+let sumOf = 0;
 for (let i = 1; i <= 100; i++) {
-    sum += i;
+    sumOf += i;
 }
-console.log(sum);
+console.log(sumOf);
 
 //Задание 6
 // Выведите все элементы массива в консоль используя цикл for
@@ -108,9 +108,7 @@ const greeting = 'Hello, world!';
 let vowelCount = 0;
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 for (let i = 0; i < greeting.length; i++) {
-    const currentLetter = greeting[i].toLowerCase();
-
-    if (vowels.includes(currentLetter)) {
+    if (vowels.includes(greeting[i])) {
         vowelCount++;
     }
 }
@@ -125,32 +123,118 @@ console.log(combinedString);
 
 //Задание 17
 // Выведите числа от 1 до 10 в консоль используя цикл while
+let q = 1;
+while(q <= 10){
+    console.log(q)
+    q++
+}
 
 
 //Задание 18
 // Выведите числа от 1 до 10 в консоль в обратном порядке используя цикл while
+let p = 11;
+while(p >= 1){
+    console.log(p)
+    --p
+}
 
 //Задание 19
 // Проверьте, все ли элементы массива являются положительными числами используя цикл while
 // Подсказка: используйте директиву break
 const allNumbers = [1, 2, 3, -4, 5];
 let allPositive = true;
+let a = 1;
+
+while(a < allNumbers.length){
+    if (allNumbers[a] < 0 ){
+        allPositive = false;
+        break;
+    }
+    a++;
+}
+
+console.log(allPositive);
 
 //Задание 20
 // Выведите значения элементов массива до первого отрицательного числа используя цикл do...while
 const random = [2, 4, 6, -3, 8, 10];
+let v = 0;
+
+do {
+    console.log(random[v]);
+    v++;
+} while (v < random.length && random[v] >= 0);
 
 //Задание 21
 // Выведите числа от 1 до 100, пропуская числа, которые делятся на 3 используя цикл do...while
-
+//for(let i = 1; i <101; i++){
+    //if(i % 3 !== 0){
+        //console.log(i);
+    //}
+//}
+let m = 1;
+do {
+    if(m % 3 !== 0){
+        console.log(m)
+    }
+    m++;
+} while (m <= 100)
 //Задание 22
 // Запросить у пользователя числа, пока сумма введенных чисел не станет больше 100
+let sum = 0;
+
+do {
+    let input = prompt('Введите число:');
+
+    // Проверяем, является ли введенное значение числом
+    if (input === null) {
+        // Если пользователь нажал "Отмена", прерываем цикл
+        break;
+    }
+
+    let number = Number(input);
+
+    // Проверяем, удалось ли преобразовать введенное значение в число
+    if (!isNaN(number)) {
+        sum += number;
+    } else {
+        alert('Введите корректное число.');
+    }
+
+    if (sum > 100) {
+        alert('Сумма чисел превысила 100.');
+        break;
+    }
+} while (true);
+
 
 //Задание 23
 // Напишите функцию, которая изменит фоновый цвет всех элементов <h4> на странице на синий цвет
+function changeColor() {
+    let h4Elements = document.getElementsByTagName('h4');
+
+    for (let i = 0; i < h4Elements.length; i++) {
+        h4Elements[i].style.backgroundColor = 'blue';
+    }
+}
+
 
 //Задание 24
 // Напишите генератор случайных строк до 6 символов
 // Подсказка: используйте методы объекта Math и длину массива alphabet
-let alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
-let randomString = '';
+//let alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+//let randomString = '';
+
+function generateStringRadnom(){
+    let alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+    let randomString = '';
+
+for(let i = 0; i < 6; i++){
+    randomString += alphabet[Math.floor(Math.random() * alphabet.lenght)];
+}
+return randomString;
+}
+let stingOne = generateStringRadnom();
+let stingTwo = generateStringRadnom();
+
+console.log(randomSting)
