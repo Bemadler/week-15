@@ -1,16 +1,19 @@
 //Задание 1
 // Выведите числа от 1 до 10 в консоль
+let i = 0;
 for (i = 0; i <= 10; i++){
     console.log(i)
 }
 //Задание 2
 // Выведите чётные числа от 1 до 20 в консоль
+let i = 0;
 for (i = 0; i <= 20; i++){
     if (i % 2 === 0)
     console.log(i)
 }
 //Задание 3
 // Выведите числа от 10 до 1 в консоль в обратном порядке
+let i = 0;
 for (i = 10; i >=0; --i){
     console.log(i)
 }
@@ -34,6 +37,7 @@ console.log(sumOf);
 //Задание 6
 // Выведите все элементы массива в консоль используя цикл for
 const array = [1, 2, 3, 4, 5];
+let i = 0;
 for(i = 0; i < array.length; i++){
     console.log(array[i])
 }
@@ -82,7 +86,7 @@ for(i = 0; i < sentences.length; i++ ){
 //Задание 12
 // Выведите сумму всех элементов массива используя цикл for..of. Массив numbers объявлен в Задании 7
 const numberss = [1, 2, 3, 4, 5]
-result = 0
+let result = 0;
 for (const number of numberss) {
     result += number;
 }
@@ -90,6 +94,7 @@ for (const number of numberss) {
 console.log(result);
 //Задание 13
 // Выведите длину каждого слова из массива строк в консоль
+let i = 0;
 const list = ['apple', 'banana', 'cherry'];
 for(i = 0; i < list.length; i++){
     console.log(list[i].length);
@@ -132,7 +137,7 @@ while(q <= 10){
 
 //Задание 18
 // Выведите числа от 1 до 10 в консоль в обратном порядке используя цикл while
-let p = 11;
+let p = 10;
 while(p >= 1){
     console.log(p)
     --p
@@ -143,7 +148,7 @@ while(p >= 1){
 // Подсказка: используйте директиву break
 const allNumbers = [1, 2, 3, -4, 5];
 let allPositive = true;
-let a = 1;
+let a = 0;
 
 while(a < allNumbers.length){
     if (allNumbers[a] < 0 ){
@@ -230,7 +235,7 @@ function generateStringRadnom(){
     let randomString = '';
 
 for(let i = 0; i < 6; i++){
-    randomString += alphabet[Math.floor(Math.random() * alphabet.lenght)];
+    randomString += alphabet[Math.floor(Math.random() * alphabet.length)];
 }
 return randomString;
 }
